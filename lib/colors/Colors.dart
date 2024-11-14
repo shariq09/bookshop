@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
 
 class CustomColors {
-  static Color titleHeading = Color(0xff498B6D);
+  static Color titleHeading = const Color.fromRGBO(73, 139, 109, 1);
 }
