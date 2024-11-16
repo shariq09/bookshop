@@ -1,16 +1,18 @@
-import 'package:bookshop/conrtrollers/signupcontroller.dart';
-import 'package:bookshop/views/LoginPage.dart';
+import 'package:bookshop/conrtrollers/signincontroller.dart';
+import 'package:flutter/material.dart';
 import 'package:bookshop/widgets/CustomButtom.dart';
 import 'package:bookshop/widgets/CustomTextfields.dart';
-import 'package:flutter/material.dart';
+
 import 'package:get/get.dart';
 
-class SignupScreen extends StatelessWidget {
-  const SignupScreen({super.key});
+import 'signupscreen.dart';
+
+class SigninScreen extends StatelessWidget {
+  const SigninScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-    final controller = Get.put(SignupController());
+    final controller = Get.put(SigninController());
     return Scaffold(
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 16),
@@ -19,7 +21,7 @@ class SignupScreen extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             const SizedBox(height: 20),
-            Text("Sign Up", style: Theme.of(context).textTheme.titleMedium),
+            Text("Sign In", style: Theme.of(context).textTheme.titleMedium),
             const SizedBox(height: 20),
             Center(
               child: Image.asset(
@@ -28,16 +30,6 @@ class SignupScreen extends StatelessWidget {
               ),
             ),
 
-            CustomTextfield(
-                Text: "First Name", controller: controller.firstnameController),
-            SizedBox(
-              height: Get.height * 0.04,
-            ),
-            CustomTextfield(
-                Text: "Last Name", controller: controller.lastnameController),
-            SizedBox(
-              height: Get.height * 0.04,
-            ),
             CustomTextfield(
                 Text: "Email", controller: controller.emailController),
             SizedBox(
@@ -61,7 +53,7 @@ class SignupScreen extends StatelessWidget {
                         color: Colors.grey),
                   ),
                   hintText: "password",
-                  hintStyle: TextStyle(
+                  hintStyle: const TextStyle(
                       fontFamily: "inter", fontSize: 16, color: Colors.grey),
                   focusedBorder: OutlineInputBorder(
                       borderSide: const BorderSide(color: Colors.grey),
@@ -76,8 +68,10 @@ class SignupScreen extends StatelessWidget {
               height: Get.height * 0.08,
             ),
             CustomButton(
-              text: "Sign Up",
-              onPressed: () {},
+              text: "Sign In",
+              onPressed: () {
+                controller.signin();
+              },
             ),
             SizedBox(
               height: Get.height * 0.08,
@@ -88,11 +82,11 @@ class SignupScreen extends StatelessWidget {
             ),
             TextButton(
               onPressed: () {
-                Get.to(() => LoginScreen());
+                Get.to(() => SignupScreen());
               },
-              child: Center(
+              child: const Center(
                 child: Text(
-                  "Log in",
+                  "Sign Up",
                   style: TextStyle(
                     fontSize: 16,
                     color: const Color.fromRGBO(73, 139, 109, 1),
@@ -107,16 +101,3 @@ class SignupScreen extends StatelessWidget {
     );
   }
 }
-
-
-
-
-// class Signupscreen extends StatelessWidget {
-//   const Signupscreen({super.key});
-
-//   @override
-//   Widget build(BuildContext context) {
-//     
-//     return ;
-//   }
-// }

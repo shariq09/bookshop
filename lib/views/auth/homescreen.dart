@@ -1,6 +1,5 @@
-import 'package:bookshop/conrtrollers/signupcontroller.dart';
-import 'package:bookshop/views/LoginPage.dart';
-import 'package:bookshop/views/signupscreen.dart';
+import 'package:bookshop/views/auth/signinscreen.dart';
+import 'package:bookshop/views/auth/signupscreen.dart';
 import 'package:bookshop/widgets/CustomButtom.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -33,7 +32,7 @@ class HomeScreen extends StatelessWidget {
               CustomButton(
                   text: "Login",
                   onPressed: () {
-                    Get.to(() => LoginScreen());
+                    Get.to(() => SigninScreen());
                   }),
 
               SizedBox(height: 20),
