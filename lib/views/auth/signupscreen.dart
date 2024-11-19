@@ -61,7 +61,7 @@ class SignupScreen extends StatelessWidget {
                         color: Colors.grey),
                   ),
                   hintText: "password",
-                  hintStyle: TextStyle(
+                  hintStyle:const TextStyle(
                       fontFamily: "inter", fontSize: 16, color: Colors.grey),
                   focusedBorder: OutlineInputBorder(
                       borderSide: const BorderSide(color: Colors.grey),

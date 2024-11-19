@@ -15,6 +15,7 @@ class SigninController extends GetxController {
   final passController = TextEditingController();
   final FirebaseAuth auth = FirebaseAuth.instance;
 
+
   void isToggle() {
     isObsecure.value = !isObsecure.value;
   }

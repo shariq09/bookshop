@@ -14,45 +14,52 @@ class ProductCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Card(
-      elevation: 5,
-      margin: const EdgeInsets.only(bottom: 20),
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(10),
-      ),
-      child: Padding(
-        padding: const EdgeInsets.all(10.0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            // Book Title
-            Text(
-              productName,
-              style: const TextStyle(
-                fontSize: 24,
-                fontWeight: FontWeight.bold,
+    return SizedBox(
+      width: 300,
+      height: 350,
+      child: Card(
+        elevation: 5,
+        margin: const EdgeInsets.only(bottom: 20),
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(10),
+        ),
+        child: Padding(
+          padding: const EdgeInsets.all(10.0),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              // Book Title
+              Text(
+                productName,
+                style: const TextStyle(
+                  fontSize: 24,
+                  fontWeight: FontWeight.bold,
+                ),
               ),
-            ),
-            const SizedBox(height: 5),
-            // Book Price
-            Text(
-              price,
-              style: const TextStyle(
-                fontSize: 20,
-                color: Colors.green,
-                fontWeight: FontWeight.bold,
+              const SizedBox(height: 5),
+              // Book Price
+              Text(
+                price,
+                style: const TextStyle(
+                  fontSize: 20,
+                  color: Colors.green,
+                  fontWeight: FontWeight.bold,
+                ),
               ),
-            ),
-            const SizedBox(height: 10),
-            // Book Description
-            Text(
-              description,
-              style: TextStyle(
-                fontSize: 16,
-                color: Colors.grey[700],
+              const SizedBox(height: 10),
+              // Book Description
+              Text(
+                overflow: TextOverflow.ellipsis,
+                maxLines: 5,
+                softWrap: false,
+                description,
+                style: TextStyle(
+                  fontSize: 16,
+                  color: Colors.grey[700],
+                ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );

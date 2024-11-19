@@ -24,9 +24,7 @@ class MainScreen extends StatelessWidget {
                   color: Colors.blue,
                 )),
             ListTile(
-              onTap: () {
-                
-              },
+              onTap: () {},
               title: Text("Log out"),
             )
           ],
@@ -85,7 +83,7 @@ class MainScreen extends StatelessWidget {
                                   return ProductCard(
                                       productName: "${product['name']}",
                                       price: "${product['price']}",
-                                      description: "description");
+                                      description: "${product['desc']}");
                                 },
                                 separatorBuilder:
                                     (BuildContext context, int index) {
